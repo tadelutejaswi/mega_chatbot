@@ -10,9 +10,9 @@ class MegaChatbot:
     def __init__(self, knowledge_file):
         self.data_processor = DataProcessor(knowledge_file)
         self.context = {}
-        # Initialize API keys
-        self.openai_key = "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"
-        self.weather_key = "52e64ead4fba6db0a54b3f0bce28a385"
+        # Initialize API keys from environment variables
+        self.openai_key = os.getenv("OPENAI_API_KEY")
+        self.weather_key = os.getenv("WEATHER_API_KEY")
         openai.api_key = self.openai_key
 
     def respond(self, user_input, user_id='default'):

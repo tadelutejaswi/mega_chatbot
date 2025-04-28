@@ -1,19 +1,34 @@
 import openai
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from chatbot import MegaChatbot
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Load API keys from environment variables (recommended for security)
-openai.api_key = os.getenv('OPENAI_API_KEY', "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")
-weather_api_key = os.getenv('WEATHER_API_KEY', "52e64ead4fba6db0a54b3f0bce28a385")
+# Load API keys from environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
+weather_api_key = os.getenv("WEATHER_API_KEY")
 
 # Initialize chatbot with correct path
 chatbot = MegaChatbot('knowledge_base.csv')
+
+@app.route('/')
+def home():
+    """Root route with a simple welcome message"""
+    return "Welcome to the Mega Chatbot API!"
+
+@app.route('/favicon.ico')
+def favicon():
+    """Serve the favicon"""
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/chat', methods=['POST'])
 def chat_endpoint():

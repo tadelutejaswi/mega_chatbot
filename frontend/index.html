@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>MegaBot</h1>
+            </div>
+            <div class="tagline">Your Ultimate Knowledge Companion</div>
+        </div>
+        
+        <div class="chatbot-body" id="chatWindow">
+            <!-- Messages will appear here -->
+            <div class="welcome-message">
+                <p>Hello! I'm MegaBot, your advanced AI assistant. Ask me anything!</p>
+                <p>Try questions like: <span class="example-question" id="randomQuestion"></span></p>
+            </div>
+        </div>
+        
+        <div class="chatbot-footer">
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="features">
+                <button id="voiceButton"><i class="fas fa-microphone"></i></button>
+                <button id="clearButton"><i class="fas fa-trash"></i></button>
+                <button id="themeButton"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Virtual environment
+.venv/
+env/
+
+# Ignore all environment files
+*.env
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+# Virtual environment
+.venv/
+env/
+
+# Ignore all environment files
+*.env
+.env.example
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.iml
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+*.tmp
+*.bak
+
+# Ignore byte-compiled files
+__pycache__/
+*.py[cod]
